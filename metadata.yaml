@@ -1,7 +1,7 @@
 ---
-title: "Título do Seu Livro"
-subtitle: "Um subtítulo que complementa o título"
-author: "Seu Nome"
+title: "Back to Feedback"
+subtitle: "Quatro anos de feedback de performance review transformados em lições para quem trabalha com qualidade"
+author: "Lucas"
 date: "2026"
 lang: pt-BR
 
@@ -24,13 +24,19 @@ numbersections: true
 
 # Metadados para EPUB/publicação digital
 description: |
-  Descrição do livro para lojas digitais (Hotmart, Amazon KDP, etc.).
-  Use até 4000 caracteres. Explique o problema que o livro resolve
-  e para quem ele é indicado.
-subject: "Categoria do livro (ex: Tecnologia, Negócios, Educação)"
+  Back to Feedback transforma quatro anos de feedbacks reais de performance
+  review e um ciclo de PIP em lições públicas e acionáveis para QA Engineers
+  e profissionais de tecnologia. Cada capítulo nasce de um padrão real
+  identificado nos feedbacks — não é teoria, é o que aconteceu e o que eu fiz
+  a respeito. Você vai encontrar o erro enxuto no título, a origem do
+  feedback, onde errei, o que aprendi, como acertar e passos práticos que
+  pode aplicar já na próxima sprint.
+subject: "Tecnologia / Carreira / Qualidade de Software"
 keywords:
-  - palavra-chave-1
-  - palavra-chave-2
-  - palavra-chave-3
+  - QA
+  - software testing
+  - feedback
+  - carreira em tecnologia
+  - performance review
 cover-image: "assets/capa.png"
 ---

@@ -6,7 +6,7 @@
 #   Instalar TinyTeX: Rscript -e "tinytex::install_tinytex()"
 # ============================================================
 
-TITULO="meu-livro"
+TITULO="back-to-feedback"
 CAPITULOS="00-prefacio.md 01-capitulo.md 02-capitulo.md 99-conclusao.md"
 
 echo "📚 Compilando o livro..."
@@ -32,7 +32,7 @@ pandoc metadata.yaml $CAPITULOS \
   --toc-depth=2 \
   --number-sections \
   --highlight-style=tango \
-  --metadata title="Meu Livro"
+  --metadata title="Back to Feedback"
 echo "   ✅ ${TITULO}.html gerado"
 
 # ── EPUB (para Kindle, Kobo, Google Play Books) ──────────────

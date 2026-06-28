@@ -1,109 +1,55 @@
-# Capítulo 1: Título do Primeiro Capítulo
+# Capítulo 1 — Entreguei. Não contei. E ninguém soube.
 
-<!--
-  ESTRUTURA RECOMENDADA POR CAPÍTULO:
-  1. Introdução (o que o leitor vai aprender e por que importa)
-  2. Desenvolvimento (conteúdo principal, dividido em seções)
-  3. Exemplos práticos
-  4. Resumo do capítulo
-  5. Exercício ou desafio (opcional)
--->
+> **Tema:** visibilidade proativa
+> **Origem do feedback:** todos os ciclos, de 2022 a 2025
 
-## Introdução
+## A origem
 
-Comece o capítulo com um gancho — uma pergunta, um problema, ou uma
-situação com a qual o leitor se identifica. Explique em 2 ou 3 parágrafos
-o que será abordado e por que isso é relevante para ele.
+Este é o feedback mais persistente de toda a minha trajetória. Ele apareceu nos quatro anos, por todos os líderes que tive e em comentários de colegas em praticamente todos os ciclos. Em 2022 ele vinha embrulhado como "fale mais nas cerimônias". Em 2025 já tinha virado "metrics-driven storytelling". A linguagem foi ficando mais sofisticada a cada ano. O gap por trás dela continuou exatamente o mesmo.
 
-> **Neste capítulo você vai aprender:**
-> - Conceito A
-> - Conceito B
-> - Como aplicar X na prática
+Quando um feedback atravessa quatro anos e várias pessoas diferentes, dizendo a mesma coisa com palavras diferentes, ele para de ser uma observação pontual. Vira um diagnóstico.
 
----
+## Onde errei
 
-## 1.1 Primeira Seção
+Eu fiz o trabalho. E fiz bem. Mas não contei para ninguém.
 
-Use `##` para seções dentro do capítulo e `###` para subseções.
+Eu acreditava, com uma convicção quase ingênua, que entregar era suficiente. Que bons resultados falam por si só. Que se o trabalho fosse bom o bastante, alguém naturalmente perceberia. Passei anos operando nessa crença.
 
-Escreva parágrafos curtos — máximo de 4 ou 5 linhas. O leitor digital
-escaneia o texto antes de ler. Facilite esse processo.
+Não funciona assim. Resultados não falam por si. Em quatro anos consecutivos, líderes e colegas diferentes me disseram a mesma frase com pequenas variações: *você está presente, mas parece ausente.* Eu estava lá, entregando — e mesmo assim a percepção era de alguém que não se sabia bem o que estava fazendo.
 
-### Subseção: Um conceito importante
+## O que aprendi
 
-Quando precisar destacar um **termo importante**, use negrito na primeira
-ocorrência. Use *itálico* para ênfase ou termos em outros idiomas.
+Demorei tempo demais para entender uma coisa simples: **visibilidade não é ego. É informação.**
 
-Para código inline, use `crase simples`. Para blocos de código:
+Quando você não comunica o que está fazendo, você não deixa um espaço neutro. Você deixa um vazio — e as pessoas preenchem esse vazio com a interpretação que tiverem à mão, que raramente é a mais generosa. O silêncio sobre o próprio trabalho não é lido como humildade. É lido como ausência, como falta de progresso, às vezes até como falta de competência.
 
-```javascript
-// Exemplo de bloco de código
-function exemplo() {
-  return "Substitua pelo código do seu livro";
-}
-```
+O impacto de um trabalho só existe, do ponto de vista da organização, se alguém o comunica. E essa pessoa precisa ser você. Ninguém vai narrar a sua contribuição por você — nem o seu líder, que tem dez outras pessoas para acompanhar, nem o colega, que está ocupado narrando a dele.
 
----
+## Como acertar
 
-## 1.2 Segunda Seção
+A virada começa quando você passa a tratar visibilidade como um **entregável**, e não como algo opcional que você faz quando sobra tempo (nunca sobra).
 
-### Listas
+Na prática, isso significou para mim adotar um status semanal curto: o que fechei, o que encontrei, o que vem a seguir. A chave é que não seja um relatório burocrático e sim uma narrativa com impacto — três linhas que contam uma história mínima sobre o valor que aquele trabalho gerou.
 
-Use listas com moderação — elas são ótimas para enumerar etapas ou
-características, mas o texto corrido é mais agradável para leitura.
+Visibilidade vira rotina, não inspiração. Você não comunica quando se lembra ou quando está animado. Você comunica porque é parte do trabalho, do mesmo jeito que escrever um teste é parte do trabalho.
 
-**Lista de passos (numerada):**
+## Passos práticos
 
-1. Primeiro passo — explique brevemente
-2. Segundo passo — explique brevemente
-3. Terceiro passo — explique brevemente
+1. **Status semanal de três linhas.** Toda sexta-feira, antes de encerrar, escreva um status fixo no canal do time: o que fechou, o que encontrou, o que vem a seguir. Use sempre o mesmo template — isso reduz a fricção a quase zero nos dias de menor energia.
+2. **Nunca entre numa cerimônia sem ter algo a dizer.** Antes de cada reunião, prepare uma observação ou uma pergunta. Uma só já basta para deixar de ser presença passiva e virar presença percebida.
+3. **Documente bugs com contexto de impacto, não só descrição técnica.** Em vez de só descrever o defeito, registre o que ele poderia ter custado — para o usuário, para o fluxo, para a entrega. A mesma informação técnica, com impacto explícito, tem peso completamente diferente.
+4. **Ao finalizar uma iniciativa, escreva um post-mortem curto e compartilhe.** Não precisa ser longo. Precisa existir e ser visível.
+5. **Leve o aprendizado para fora.** Escrever publicamente — em posts sobre "o que aprendi fazendo X", baseados em situações reais — é a forma mais poderosa de transformar trabalho silencioso em reputação. Este livro é exatamente isso.
 
-**Lista de características (com marcadores):**
+## 📚 Para ir além
 
-- Característica A: descrição
-- Característica B: descrição
-- Característica C: descrição
+- **StoryBrand**, de Donald Miller — porque comunicar o próprio trabalho é, no fundo, contar uma história clara em que o valor fica óbvio.
+- **Storytelling com Dados**, de Cole Nussbaum Knaflic — para transformar números soltos em narrativas que as pessoas entendem e lembram.
+- **Comece pelo Porquê**, de Simon Sinek — sobre começar a comunicação pelo motivo, não pela tarefa.
+- **29 Minutos para Falar Bem em Público**, de Reinaldo Polito — para a parte que dói mais: falar nas cerimônias sem travar.
+- **Show Your Work**, de Austin Kleon — um manifesto curto e direto sobre por que mostrar o processo, e não só o resultado, é o que constrói visibilidade.
+- **The Personal MBA**, de Josh Kaufman — para entender que ser visto e compreendido é uma competência de negócio, não um detalhe.
 
 ---
 
-## 1.3 Exemplos Práticos
-
-<!-- Use exemplos reais sempre que possível. Histórias e casos concretos
-     fixam o aprendizado muito melhor do que teoria pura. -->
-
-Considere o seguinte cenário: [descreva uma situação real ou hipotética
-que ilustre o conceito explicado na seção anterior].
-
-Nesse caso, a solução seria [explique a aplicação prática do conceito].
-
-> 💡 **Dica:** Use blockquotes para dicas rápidas, avisos ou informações
-> complementares que merecem destaque mas não cabem no fluxo principal.
-
-> ⚠️ **Atenção:** Use para alertar sobre erros comuns ou armadilhas.
-
----
-
-## Resumo do Capítulo
-
-Ao final de cada capítulo, faça um resumo dos pontos principais — em
-tópicos, de preferência. Isso reforça o aprendizado e serve como
-referência rápida para o leitor revisitar depois.
-
-- **Conceito A:** em uma frase
-- **Conceito B:** em uma frase
-- **Conceito C:** em uma frase
-
----
-
-## Exercício
-
-<!-- Exercícios são opcionais, mas aumentam muito o valor percebido
-     do livro, especialmente os técnicos. -->
-
-Agora que você entendeu [conceito do capítulo], tente fazer o seguinte:
-
-1. [Tarefa 1]
-2. [Tarefa 2]
-3. [Tarefa 3]
-
-No próximo capítulo, vamos abordar [tema do próximo capítulo].
+*Você já entregou algo bom que ninguém percebeu? O que você faria diferente para que dessa vez alguém soubesse?*
