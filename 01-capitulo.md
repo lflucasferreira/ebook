@@ -41,14 +41,14 @@ Visibilidade vira rotina, não inspiração. Você não comunica quando se lembr
 4. **Ao finalizar uma iniciativa, escreva um post-mortem curto e compartilhe.** Não precisa ser longo. Precisa existir e ser visível.
 5. **Leve o aprendizado para fora.** Escrever publicamente — em posts sobre "o que aprendi fazendo X", baseados em situações reais — é a forma mais poderosa de transformar trabalho silencioso em reputação. Este livro é exatamente isso.
 
-## 📚 Para ir além
+## Para ir além
 
-- **StoryBrand**, de Donald Miller — porque comunicar o próprio trabalho é, no fundo, contar uma história clara em que o valor fica óbvio.
-- **Storytelling com Dados**, de Cole Nussbaum Knaflic — para transformar números soltos em narrativas que as pessoas entendem e lembram.
-- **Comece pelo Porquê**, de Simon Sinek — sobre começar a comunicação pelo motivo, não pela tarefa.
-- **29 Minutos para Falar Bem em Público**, de Reinaldo Polito — para a parte que dói mais: falar nas cerimônias sem travar.
-- **Show Your Work**, de Austin Kleon — um manifesto curto e direto sobre por que mostrar o processo, e não só o resultado, é o que constrói visibilidade.
-- **The Personal MBA**, de Josh Kaufman — para entender que ser visto e compreendido é uma competência de negócio, não um detalhe.
+- **[StoryBrand](https://www.goodreads.com/book/show/9789221.StoryBrand)**, de Donald Miller — porque comunicar o próprio trabalho é, no fundo, contar uma história clara em que o valor fica óbvio.
+- **[Storytelling com Dados](https://www.amazon.com.br/Storytelling-Dados-Visualiza%C3%A7%C3%A3o-Profissionais-Neg%C3%B3cios/dp/8550804681)**, de Cole Nussbaum Knaflic — para transformar números soltos em narrativas que as pessoas entendem e lembram.
+- **[Comece pelo Porquê](https://www.amazon.com.br/Comece-pelo-Porqu%C3%AA-Simon-Sinek/dp/854650479X)**, de Simon Sinek — sobre começar a comunicação pelo motivo, não pela tarefa.
+- **[29 Minutos para Falar Bem em Público](https://www.amazon.com.br/Minutos-Falar-Bem-Publico-Comunicador/dp/8535210956)**, de Reinaldo Polito — para a parte que dói mais: falar nas cerimônias sem travar.
+- **[Show Your Work](https://www.goodreads.com/book/show/18249439-show-your-work)**, de Austin Kleon — um manifesto curto e direto sobre por que mostrar o processo, e não só o resultado, é o que constrói visibilidade.
+- **[The Personal MBA](https://www.goodreads.com/book/show/6910327-the-personal-mba)**, de Josh Kaufman — para entender que ser visto e compreendido é uma competência de negócio, não um detalhe.
 
 ---
 

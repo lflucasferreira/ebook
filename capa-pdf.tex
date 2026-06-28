@@ -1,0 +1,100 @@
+% Capa + tipografia comercial (PDF)
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{tikz}
+
+\definecolor{linkblue}{HTML}{0055AA}
+\colorlet{chaptercolor}{linkblue}
+
+% Fontes do Windows (sem depender de pacotes TeX Gyre no MiKTeX)
+\IfFontExistsTF{Palatino Linotype}{%
+  \setmainfont{Palatino Linotype}%
+  \setsansfont{Segoe UI}%
+  \setmonofont{Consolas}%
+}{%
+  \IfFontExistsTF{Georgia}{%
+    \setmainfont{Georgia}%
+    \setsansfont{Calibri}%
+    \setmonofont{Consolas}%
+  }{%
+    \PackageWarning{capa-pdf}{Palatino/Georgia não encontradas; usando fonte LaTeX padrão.}%
+  }%
+}
+
+% Capítulos numerados: "Capítulo X" acima, título abaixo, alinhados à esquerda
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\bfseries\raggedright}
+  {\Large\chaptertitlename\ \thechapter}
+  {0.75em}
+  {\fontsize{22}{28}\selectfont}
+
+% Prefácio, conclusão etc. (sem número)
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\sffamily\bfseries\raggedright}
+  {}
+  {0pt}
+  {\fontsize{22}{28}\selectfont}
+
+\titlespacing*{\chapter}{0pt}{24pt}{24pt}
+
+\AtBeginDocument{\renewcommand{\chaptername}{Capítulo}}
+
+% Seções: título limpo, sem numeração visual pesada
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries}
+  {}
+  {0em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries}
+  {}
+  {0em}
+  {}
+
+% Parágrafos com recuo (livro), não block style (artigo)
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt plus 0.1em}
+
+% Listas mais compactas
+\setlist[itemize]{topsep=0.4em, itemsep=0.15em, parsep=0pt}
+\setlist[enumerate]{topsep=0.4em, itemsep=0.15em, parsep=0pt}
+
+% Sumário: texto e links pretos (links do corpo continuam azuis)
+\renewcommand{\cftchapfont}{\normalfont\bfseries\color{black}}
+\renewcommand{\cftsecfont}{\normalfont\color{black}}
+\renewcommand{\cftchappagefont}{\normalfont\color{black}}
+\renewcommand{\cftsecpagefont}{\normalfont\color{black}}
+
+\AtBeginDocument{%
+  \pretocmd{\tableofcontents}{%
+    \hypersetup{linkcolor=black,urlcolor=black}%
+  }{}{}%
+  \apptocmd{\tableofcontents}{%
+    \hypersetup{linkcolor=linkblue,urlcolor=linkblue}%
+  }{}{}%
+}
+
+% Capa em página inteira (após hyperref carregar, sobrescreve \maketitle)
+\makeatletter
+\AtBeginDocument{%
+  \renewcommand{\maketitle}{%
+    \newgeometry{margin=0pt}%
+    \thispagestyle{empty}%
+    \begin{titlepage}
+      \tikz[remember picture, overlay] {%
+        \node[anchor=center, inner sep=0pt] at (current page.center) {%
+          \includegraphics[width=\paperwidth, height=\paperheight]{assets/capa.png}%
+        };%
+      }%
+    \end{titlepage}%
+    \restoregeometry
+  }%
+}
+\makeatother

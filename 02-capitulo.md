@@ -39,14 +39,14 @@ A automação só começa depois que o happy path foi validado manualmente. E ca
 4. **Automatize as tarefas de impacto médio depois da validação manual da tarefa de alto impacto — nunca antes.** A ordem importa mais do que a quantidade de cobertura.
 5. **Na retrospectiva, revise se houve tarefas de alto impacto paradas enquanto tarefas menores avançavam.** Esse é o sintoma clássico de sequenciamento invertido — e o melhor lugar para corrigi-lo antes que vire feedback de review.
 
-## 📚 Para ir além
+## Para ir além
 
-- **Essencialismo**, de Greg McKeown — sobre fazer menos, porém o que realmente importa, na ordem certa.
-- **A Única Coisa**, de Gary Keller — a pergunta que organiza qualquer dia: qual é a única coisa que, se feita agora, torna o resto mais fácil ou desnecessário?
-- **O Princípio 80/20**, de Richard Koch — para identificar a fração do esforço que gera a maior parte do valor.
-- **A Tríade do Tempo**, de Christian Barbosa — sobre priorizar pelo que é importante, não pelo que é urgente ou conveniente.
-- **The Deadline**, de Tom DeMarco — um romance sobre gestão de projetos que ensina, sem moralismo, por que entregar no ritmo certo vale mais do que entregar perfeito tarde demais.
-- **Accelerate**, de Nicole Forsgren, Jez Humble e Gene Kim — a base de dados por trás da ideia de que ciclos curtos de feedback são o que separa times de alta performance dos demais.
+- **[Essencialismo](https://www.amazon.com.br/Essencialismo-Greg-Mckeown/dp/8543102146)**, de Greg McKeown — sobre fazer menos, porém o que realmente importa, na ordem certa.
+- **[A Única Coisa](https://www.amazon.com.br/%C3%9Anica-coisa-foco-importa/dp/8542210289)**, de Gary Keller — a pergunta que organiza qualquer dia: qual é a única coisa que, se feita agora, torna o resto mais fácil ou desnecessário?
+- **[O Princípio 80/20](https://www.amazon.com.br/Princ%C3%ADpio-80-20-Richard-Koch/dp/8537810627)**, de Richard Koch — para identificar a fração do esforço que gera a maior parte do valor.
+- **[A Tríade do Tempo](https://www.amazon.com.br/Tr%C3%ADade-Tempo-Christian-Barbosa/dp/855080148X)**, de Christian Barbosa — sobre priorizar pelo que é importante, não pelo que é urgente ou conveniente.
+- **[The Deadline](https://www.goodreads.com/book/show/678041.The_Deadline)**, de Tom DeMarco — um romance sobre gestão de projetos que ensina, sem moralismo, por que entregar no ritmo certo vale mais do que entregar perfeito tarde demais.
+- **[Accelerate](https://www.goodreads.com/book/show/35747076-accelerate)**, de Nicole Forsgren, Jez Humble e Gene Kim — a base de dados por trás da ideia de que ciclos curtos de feedback são o que separa times de alta performance dos demais.
 
 ---
 

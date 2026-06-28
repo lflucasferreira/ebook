@@ -1,4 +1,4 @@
-# Conclusão
+# Conclusão {.unnumbered}
 
 ## O que você conquistou
 
@@ -33,14 +33,3 @@ com alguém / entrar em contato].
 *[Seu Nome]*  
 *[E-mail ou site para contato]*  
 *[Redes sociais]*
-
----
-
-## Referências e Leituras Recomendadas
-
-<!-- Liste aqui os livros, artigos, cursos ou sites que você recomenda
-     como complemento ao conteúdo deste livro. -->
-
-- [Título do livro 1] — Autor. Descrição breve.
-- [Título do livro 2] — Autor. Descrição breve.
-- [Site ou curso] — Link ou descrição.

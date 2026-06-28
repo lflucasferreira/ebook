@@ -1,4 +1,4 @@
-# Prefácio
+# Prefácio {.unnumbered}
 
 Durante quatro anos seguidos, eu recebi quase sempre o mesmo feedback. As palavras mudavam de ciclo para ciclo — de líderes diferentes, em contextos diferentes, com sofisticação crescente — mas o fundo era o mesmo. Em 2022 era "fale mais nas cerimônias". Em 2025 era "metrics-driven storytelling". A linguagem evoluiu. O gap, não.
 

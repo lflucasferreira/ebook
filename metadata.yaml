@@ -5,22 +5,21 @@ author: "Lucas"
 date: "2026"
 lang: pt-BR
 
-# Configurações de PDF (via Pandoc + LaTeX)
+# PDF — layout comercial (não acadêmico)
 documentclass: book
+classoption: oneside
 papersize: a4
-fontsize: 12pt
-linestretch: 1.5
-margin-left: 3cm
-margin-right: 2.5cm
-margin-top: 3cm
-margin-bottom: 2.5cm
+fontsize: 11pt
+linestretch: 1.08
+geometry: margin=2.2cm
 
-# Configurações visuais
+# Configurações visuais (PDF: cores definidas em capa-pdf.tex)
 colorlinks: true
-linkcolor: "0055aa"
+linkcolor: linkblue
+urlcolor: linkblue
 toc: true
 toc-depth: 2
-numbersections: true
+numbersections: false
 
 # Metadados para EPUB/publicação digital
 description: |
@@ -38,5 +37,5 @@ keywords:
   - feedback
   - carreira em tecnologia
   - performance review
-cover-image: "assets/capa.png"
+cover-image: "assets/capa.png"  # EPUB; PDF usa capa-pdf.tex
 ---
