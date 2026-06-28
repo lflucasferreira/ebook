@@ -1,0 +1,175 @@
+/* ============================================
+   ESTILO DO LIVRO DIGITAL (HTML / EPUB)
+   Usado pelo Pandoc ao gerar HTML ou EPUB
+   ============================================ */
+
+/* Fonte e cores base */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  background-color: #fafafa;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  border-bottom: 3px solid #0055aa;
+  padding-bottom: 0.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #222;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #0055aa;
+  padding-left: 0.7rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+/* Parágrafos */
+p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Blockquotes (dicas, avisos) */
+blockquote {
+  background-color: #f0f5ff;
+  border-left: 4px solid #0055aa;
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
+  color: #1a1a2e;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* Listas */
+ul, ol {
+  margin: 1rem 0 1.2rem 1.5rem;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+/* Código inline */
+code {
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.9em;
+  background-color: #f0f0f0;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: #c7254e;
+}
+
+/* Bloco de código */
+pre {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Linha divisória */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2.5rem 0;
+}
+
+/* Links */
+a {
+  color: #0055aa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #0055aa;
+  color: white;
+  padding: 0.7rem 1rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) td {
+  background-color: #f4f7fb;
+}
+
+/* Imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+/* Sumário (TOC) */
+nav#TOC {
+  background-color: #f4f7fb;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 3rem;
+}
+
+nav#TOC ul {
+  margin: 0.5rem 0 0 1rem;
+}
+
+nav#TOC > ul {
+  margin-top: 0.5rem;
+}

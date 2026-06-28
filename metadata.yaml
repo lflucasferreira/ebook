@@ -1,0 +1,36 @@
+---
+title: "Título do Seu Livro"
+subtitle: "Um subtítulo que complementa o título"
+author: "Seu Nome"
+date: "2026"
+lang: pt-BR
+
+# Configurações de PDF (via Pandoc + LaTeX)
+documentclass: book
+papersize: a4
+fontsize: 12pt
+linestretch: 1.5
+margin-left: 3cm
+margin-right: 2.5cm
+margin-top: 3cm
+margin-bottom: 2.5cm
+
+# Configurações visuais
+colorlinks: true
+linkcolor: "0055aa"
+toc: true
+toc-depth: 2
+numbersections: true
+
+# Metadados para EPUB/publicação digital
+description: |
+  Descrição do livro para lojas digitais (Hotmart, Amazon KDP, etc.).
+  Use até 4000 caracteres. Explique o problema que o livro resolve
+  e para quem ele é indicado.
+subject: "Categoria do livro (ex: Tecnologia, Negócios, Educação)"
+keywords:
+  - palavra-chave-1
+  - palavra-chave-2
+  - palavra-chave-3
+cover-image: "assets/capa.png"
+---
