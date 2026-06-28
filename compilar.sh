@@ -72,6 +72,23 @@ preparar_saida() {
     fi
 }
 
+# Pandoc 2.x (apt/CI) vs 3.x (local): flags diferentes
+opcoes_destaque() {
+    if pandoc --help 2>&1 | grep -q '\-\-syntax-highlighting'; then
+        echo "--syntax-highlighting=tango"
+    else
+        echo "--highlight-style=tango"
+    fi
+}
+
+opcoes_epub_split() {
+    if pandoc --help 2>&1 | grep -q '\-\-split-level'; then
+        echo "--split-level=1"
+    else
+        echo "--epub-chapter-level=1"
+    fi
+}
+
 GERADOS=()
 
 echo "📚 Compilando o livro..."
@@ -95,6 +112,8 @@ preparar_saida
 PDF="${SAIDA_DIR}/${TITULO}.pdf"
 HTML="${SAIDA_DIR}/${TITULO}.html"
 EPUB="${SAIDA_DIR}/${TITULO}.epub"
+DESTAQUE=$(opcoes_destaque)
+EPUB_SPLIT=$(opcoes_epub_split)
 
 # ── PDF ──────────────────────────────────────────────────────
 if configurar_latex; then
@@ -105,7 +124,7 @@ if configurar_latex; then
         --top-level-division=chapter
         --table-of-contents
         --toc-depth=2
-        --syntax-highlighting=tango
+        $DESTAQUE
     )
     if [[ -f "$CAPA" ]]; then
         PDF_ARGS+=(--include-in-header=capa-pdf.tex)
@@ -126,7 +145,7 @@ gerar "HTML" "$HTML" \
     --css=estilo.css \
     --table-of-contents \
     --toc-depth=2 \
-    --syntax-highlighting=tango \
+    $DESTAQUE \
     --metadata title="Back to Feedback"
 
 # ── EPUB (para Kindle, Kobo, Google Play Books) ──────────────
@@ -136,7 +155,7 @@ gerar "EPUB" "$EPUB" \
     --css=estilo.css \
     --table-of-contents \
     --toc-depth=2 \
-    --split-level=1
+    $EPUB_SPLIT
 
 echo ""
 if ((${#GERADOS[@]} == 0)); then

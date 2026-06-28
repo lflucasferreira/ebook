@@ -44,7 +44,7 @@ jobs:
             --css=estilo.css \
             --table-of-contents \
             --toc-depth=2 \
-            --syntax-highlighting=tango \
+            --highlight-style=tango \
             --metadata title="Back to Feedback"
 
           cp estilo.css _site/estilo.css
