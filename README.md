@@ -1,7 +1,10 @@
-# Template de Livro Digital em Markdown
+# Back to Feedback
 
-Estrutura pronta para escrever, compilar e publicar um livro digital
-em PDF, HTML e EPUB usando **Pandoc**.
+Livro digital sobre feedback de performance review e carreira em QA — escrito em Markdown e publicado com **Pandoc**.
+
+**📖 [Leia o livro online](https://lflucasferreira.github.io/ebook/)**
+
+Arquivos para download (PDF, HTML, EPUB): [Releases](https://github.com/lflucasferreira/ebook/releases)
 
 ---
 

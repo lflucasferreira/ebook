@@ -1,0 +1,56 @@
+name: Publicar Release
+
+# Gera PDF, HTML e EPUB e anexa numa GitHub Release.
+# Como usar: git tag v1.0.0 && git push origin v1.0.0
+# Ou: Actions → Publicar Release → Run workflow (tag v{run_number})
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Compilar e publicar artefatos
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar Pandoc e LaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-lang-portuguese
+
+      - name: Compilar livro
+        run: bash compilar.sh
+
+      - name: Definir tag da release
+        id: tag
+        run: |
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            echo "name=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=v${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Criar GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: Back to Feedback ${{ steps.tag.outputs.name }}
+          generate_release_notes: true
+          files: |
+            dist/back-to-feedback.pdf
+            dist/back-to-feedback.html
+            dist/back-to-feedback.epub

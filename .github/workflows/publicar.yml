@@ -3,16 +3,14 @@ name: Publicar Livro no GitHub Pages
 on:
   push:
     branches:
-      - main        # dispara sempre que você fizer push na branch main
-  workflow_dispatch: # permite rodar manualmente pela interface do GitHub
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Evita publicações paralelas — se você fizer dois pushes seguidos,
-# o segundo cancela o anterior
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -23,18 +21,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Baixa o código do repositório
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      # 2. Instala o Pandoc
       - name: Instalar Pandoc
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y pandoc
 
-      # 3. Gera o HTML com todos os capítulos
-      #    Os arquivos .md são compilados em ordem alfabética/numérica
       - name: Gerar HTML do livro
         run: |
           mkdir -p _site
@@ -44,27 +38,24 @@ jobs:
             01-capitulo.md \
             02-capitulo.md \
             99-conclusao.md \
+            100-referencias.md \
             --output=_site/index.html \
             --standalone \
             --css=estilo.css \
             --table-of-contents \
             --toc-depth=2 \
-            --number-sections \
-            --highlight-style=tango
+            --syntax-highlighting=tango \
+            --metadata title="Back to Feedback"
 
-          # Copia o CSS para a pasta de saída
           cp estilo.css _site/estilo.css
 
-          # Copia imagens se existirem
           if [ -d "assets" ]; then
             cp -r assets _site/assets
           fi
 
-      # 4. Prepara o ambiente do GitHub Pages
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v4
 
-      # 5. Empacota os arquivos gerados
       - name: Empacotar arquivos
         uses: actions/upload-pages-artifact@v3
         with:
