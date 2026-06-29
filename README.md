@@ -46,10 +46,10 @@ No terminal, dentro da pasta `meu-livro/`:
 bash compilar.sh
 ```
 
-Isso gera três arquivos:
-- `meu-livro.pdf`  — para vender (Hotmart, Gumroad, etc.)
-- `meu-livro.html` — para publicar online (GitHub Pages, etc.)
-- `meu-livro.epub` — para lojas de e-book (Amazon KDP, Kobo, etc.)
+Isso gera três arquivos em `dist/`:
+- `dist/back-to-feedback.pdf`  — para vender (Hotmart, Gumroad, etc.)
+- `dist/back-to-feedback.html` — para publicar online (GitHub Pages, etc.)
+- `dist/back-to-feedback.epub` — para lojas de e-book (Amazon KDP, Kobo, etc.)
 
 ### 4. Para gerar apenas o PDF (sem LaTeX instalado)
 

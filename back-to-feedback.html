@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Lucas" />
+  <meta name="dcterms.date" content="2026-01-01" />
+  <meta name="keywords" content="QA, software
+testing, feedback, carreira em tecnologia, performance review" />
+  <meta name="description" content="Back to Feedback transforma quatro anos de feedbacks reais de performance review e um ciclo de PIP em lições públicas e acionáveis para QA Engineers e profissionais de tecnologia. Cada capítulo nasce de um padrão real identificado nos feedbacks — não é teoria, é o que aconteceu e o que eu fiz a respeito. Você vai encontrar o erro enxuto no título, a origem do feedback, onde errei, o que aprendi, como acertar e passos práticos que pode aplicar já na próxima sprint." />
+  <title>Back to Feedback</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Back to Feedback</h1>
+<p class="subtitle">Quatro anos de feedback de performance review
+transformados em lições para quem trabalha com qualidade</p>
+<p class="author">Lucas</p>
+<p class="date">2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+
+</nav>
+<h1 id="capítulo-1-entreguei.-não-contei.-e-ninguém-soube."><span
+class="capitulo-num">Capítulo 1</span><br />
+<span class="capitulo-titulo">Entreguei. Não contei. E ninguém
+soube.</span></h1>
+<div class="capitulo-epigrafe epigrafe-capitulo">
+<p><em>“O maior problema na comunicação é a ilusão de que ela
+aconteceu.”</em></p>
+<p>— George Bernard Shaw</p>
+</div>
+<h2 id="a-origem">A origem</h2>
+<p>Este é o feedback mais persistente de toda a minha trajetória. Ele
+apareceu nos quatro anos, por todos os líderes que tive e em comentários
+de colegas em praticamente todos os ciclos. Em 2022 ele vinha embrulhado
+como “fale mais nas cerimônias”. Em 2025 já tinha virado “metrics-driven
+storytelling”. A linguagem foi ficando mais sofisticada a cada ano. O
+gap por trás dela continuou exatamente o mesmo.</p>
+<p>Quando um feedback atravessa quatro anos e várias pessoas diferentes,
+dizendo a mesma coisa com palavras diferentes, ele para de ser uma
+observação pontual. Vira um diagnóstico.</p>
+<h2 id="onde-errei">Onde errei</h2>
+<p>Eu fiz o trabalho. E fiz bem. Mas não contei para ninguém.</p>
+<p>Eu acreditava, com uma convicção quase ingênua, que entregar era
+suficiente. Que bons resultados falam por si só. Que se o trabalho fosse
+bom o bastante, alguém naturalmente perceberia. Passei anos operando
+nessa crença.</p>
+<p>Não funciona assim. Resultados não falam por si. Em quatro anos
+consecutivos, líderes e colegas diferentes me disseram a mesma frase com
+pequenas variações: <em>você está presente, mas parece ausente.</em> Eu
+estava lá, entregando — e mesmo assim a percepção era de alguém que não
+se sabia bem o que estava fazendo.</p>
+<p>O erro não era só “não falar na daily”. Era não traduzir trabalho
+técnico em informação que o time e a liderança conseguissem usar: riscos
+que eu tinha bloqueado, bugs que eu tinha encontrado antes da produção,
+tempo que eu tinha economizado ao pegar regressão cedo. Tudo isso
+existia — mas morria no meu caderno de testes, no Jira sem contexto, ou
+simplesmente na minha cabeça.</p>
+<h2 id="o-que-aprendi">O que aprendi</h2>
+<p>Demorei tempo demais para entender uma coisa simples:
+<strong>visibilidade não é ego. É informação.</strong></p>
+<p>Quando você não comunica o que está fazendo, você não deixa um espaço
+neutro. Você deixa um vazio — e as pessoas preenchem esse vazio com a
+interpretação que tiverem à mão, que raramente é a mais generosa. O
+silêncio sobre o próprio trabalho não é lido como humildade. É lido como
+ausência, como falta de progresso, às vezes até como falta de
+competência.</p>
+<p>O impacto de um trabalho só existe, do ponto de vista da organização,
+se alguém o comunica. E essa pessoa precisa ser você. Ninguém vai narrar
+a sua contribuição por você — nem o seu líder, que tem dez outras
+pessoas para acompanhar, nem o colega, que está ocupado narrando a
+dele.</p>
+<p>Para QA, isso tem uma camada extra: <strong>o valor do nosso trabalho
+muitas vezes é preventivo</strong>. Um bug que não chegou em produção
+não deixa rastro visível para quem não estava olhando. Se você não
+contar que ele existiu e que você o interceptou, a percepção externa é
+“nada aconteceu” — e “nada aconteceu” não constrói reputação.</p>
+<h2 id="como-acertar">Como acertar</h2>
+<p>A virada começa quando você passa a tratar visibilidade como um
+<strong>entregável</strong>, e não como algo opcional que você faz
+quando sobra tempo (nunca sobra).</p>
+<p>Na prática, isso significou para mim adotar um status semanal curto:
+o que fechei, o que encontrei, o que vem a seguir. A chave é que não
+seja um relatório burocrático e sim uma narrativa com impacto — três
+linhas que contam uma história mínima sobre o valor que aquele trabalho
+gerou.</p>
+<p>Visibilidade vira rotina, não inspiração. Você não comunica quando se
+lembra ou quando está animado. Você comunica porque é parte do trabalho,
+do mesmo jeito que escrever um teste é parte do trabalho.</p>
+<p>Quando o feedback evoluiu para “metrics-driven storytelling”, entendi
+que números sozinhos também não bastam — mas <strong>números dentro de
+uma história</strong> mudam completamente o jogo. Não é inflar
+resultado. É dar escala ao que você já fez: “3 bugs críticos bloqueados
+antes do deploy” pesa mais do que “testei a sprint”.</p>
+<h2 id="passos-práticos">Passos práticos</h2>
+<ol type="1">
+<li><strong>Status semanal de três linhas.</strong> Toda sexta-feira,
+antes de encerrar, escreva um status fixo no canal do time: o que
+fechou, o que encontrou, o que vem a seguir. Use a estrutura em
+<strong>Materiais de apoio</strong> (modelo + exemplo preenchido) —
+copiar e adaptar leva menos de cinco minutos e reduz a fricção a quase
+zero nos dias de menor energia.</li>
+<li><strong>Nunca entre numa cerimônia sem ter algo a dizer.</strong>
+Antes de cada reunião, prepare uma observação ou uma pergunta. Uma só já
+basta para deixar de ser presença passiva e virar presença
+percebida.</li>
+<li><strong>Documente bugs com contexto de impacto, não só descrição
+técnica.</strong> Em vez de só descrever o defeito, registre o que ele
+poderia ter custado — para o usuário, para o fluxo, para a entrega. A
+mesma informação técnica, com impacto explícito, tem peso completamente
+diferente.</li>
+<li><strong>Ao finalizar uma iniciativa, escreva um post-mortem curto e
+compartilhe.</strong> Não precisa ser longo. Precisa existir e ser
+visível.</li>
+<li><strong>Leve o aprendizado para fora.</strong> Escrever publicamente
+— em posts sobre “o que aprendi fazendo X”, baseados em situações reais
+— é a forma mais poderosa de transformar trabalho silencioso em
+reputação. Este livro é exatamente isso.</li>
+</ol>
+<h2 class="apos-passos-praticos" id="o-framework-sar-qa">O framework
+SAR-QA</h2>
+<p>Usei uma estrutura simples para quase toda comunicação de
+visibilidade. Chamei de <strong>SAR-QA</strong> (Situação → Ação →
+Resultado → Próximo passo):</p>
+<div class="sar-qa">
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Situação</span>
+<span class="sar-qa-item-prompt">O que estava em jogo</span>
+</div>
+<p><em>“Release do checkout com 12 histórias na fila de QA”</em></p>
+</div>
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Ação</span>
+<span class="sar-qa-item-prompt">O que você fez</span>
+</div>
+<p><em>“Priorizei fluxo de pagamento e rodei regressão nos 3
+gateways”</em></p>
+</div>
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Resultado</span>
+<span class="sar-qa-item-prompt">O impacto mensurável ou concreto</span>
+</div>
+<p><em>“2 bugs P1 bloqueados; deploy liberado sem rollback”</em></p>
+</div>
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Próximo passo</span>
+<span class="sar-qa-item-prompt">O que vem agora</span>
+</div>
+<p><em>“Cobertura de API do carrinho na segunda”</em></p>
+</div>
+</div>
+<p>Esse framework funciona em status semanal, comentário no Jira, fala
+na daily, post-mortem e até descrição de PR. A regra é: <strong>nunca
+entregue só a ação.</strong> Ação sem resultado parece atividade.
+Resultado sem situação parece exagero.</p>
+<h2 id="aplicando-na-prática-de-qa">Aplicando na prática de QA</h2>
+<p>Visibilidade para QA não é “marketing pessoal”. É <strong>reduzir
+incerteza</strong> para quem depende do seu trabalho: Product Owner
+(PO), devs, líderes, SRE, suporte. (Demais siglas:
+<strong>Glossário</strong>, no final do livro.)</p>
+<h3 id="o-que-vale-tornar-visível-e-o-que-não-vale">O que vale tornar
+visível (e o que não vale)</h3>
+<p><strong>Vale tornar visível:</strong></p>
+<ul>
+<li>Bugs encontrados <strong>antes</strong> de produção, com severidade
+e área afetada</li>
+<li>Riscos levantados durante refinamento ou teste exploratório</li>
+<li>Bloqueios reais (ambiente instável, dado de teste ausente,
+dependência externa)</li>
+<li>Decisões de priorização de teste (“testei X antes de Y
+porque…”)</li>
+<li>Métricas de sprint com contexto: tempo em QA, retornos de dev,
+cobertura de cenários críticos</li>
+</ul>
+<p><strong>Não vale (ou atrapalha):</strong></p>
+<ul>
+<li>Listar cada caso de teste executado sem filtro</li>
+<li>Status vago (“testando”, “em progresso”) sem objeto</li>
+<li>Reclamar de processo sem propor alternativa</li>
+<li>Métricas soltas sem narrativa (“executei 847 casos”)</li>
+</ul>
+<h3 id="métricas-que-contam-história">Métricas que contam história</h3>
+<p>Escolha <strong>duas ou três métricas por sprint</strong> e amarre
+cada uma a uma decisão ou resultado:</p>
+<div class="sar-qa metricas">
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Bugs críticos/altos bloqueados
+pré-prod</span>
+<span class="sar-qa-item-prompt">Qualidade interceptada</span>
+</div>
+<p><em>“Impedimos 2 P1 no fluxo de login — afetariam 100% dos
+usuários”</em></p>
+</div>
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Cycle time em QA</span>
+<span class="sar-qa-item-prompt">Velocidade de feedback</span>
+</div>
+<p><em>“História X ficou 1 dia em QA; devolvemos com evidência em
+4h”</em></p>
+</div>
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Retorno de dev por sprint</span>
+<span class="sar-qa-item-prompt">Clareza dos reportes</span>
+</div>
+<p><em>“3 de 5 bugs voltaram fechados na primeira correção”</em></p>
+</div>
+<div class="sar-qa-item">
+<div class="sar-qa-item-header">
+<span class="sar-qa-item-label">Cenários críticos cobertos
+vs. planejados</span>
+<span class="sar-qa-item-prompt">Foco vs. volume</span>
+</div>
+<p><em>“100% dos happy paths de pagamento; edge cases ficam para próxima
+sprint”</em></p>
+</div>
+</div>
+<p>O objetivo não é virar analista de dados. É dar
+<strong>escala</strong> ao trabalho que já aconteceu.</p>
+<h3 id="canais-certos-para-cada-mensagem">Canais certos para cada
+mensagem</h3>
+<div class="qa-canal">
+<div class="qa-canal-item">
+<div class="qa-canal-item-header">
+<span class="qa-canal-item-label">Canal do time (Slack/Teams)</span>
+<span class="qa-canal-item-freq">Semanal + ad hoc</span>
+</div>
+<p>Status semanal, risco urgente</p>
+</div>
+<div class="qa-canal-item">
+<div class="qa-canal-item-header">
+<span class="qa-canal-item-label">Comentário no ticket
+(Jira/Azure)</span>
+<span class="qa-canal-item-freq">Contínuo</span>
+</div>
+<p>Progresso, evidência, impacto do bug</p>
+</div>
+<div class="qa-canal-item">
+<div class="qa-canal-item-header">
+<span class="qa-canal-item-label">Daily/Planning</span>
+<span class="qa-canal-item-freq">Por cerimônia</span>
+</div>
+<p>Decisão de prioridade, bloqueio</p>
+</div>
+<div class="qa-canal-item">
+<div class="qa-canal-item-header">
+<span class="qa-canal-item-label">Página viva (Confluence/Notion)</span>
+<span class="qa-canal-item-freq">Por release</span>
+</div>
+<p>Mapa de riscos, cobertura da release</p>
+</div>
+<div class="qa-canal-item">
+<div class="qa-canal-item-header">
+<span class="qa-canal-item-label">Demo assíncrona (Loom/gravação)</span>
+<span class="qa-canal-item-freq">Quando necessário</span>
+</div>
+<p>Bug complexo, fluxo difícil de explicar por texto</p>
+</div>
+</div>
+<p>Regra prática: <strong>informação que muda decisão hoje → canal
+síncrono ou thread com @.</strong> Informação que constrói histórico →
+ticket ou wiki.</p>
+<h2 id="materiais-de-apoio">Materiais de apoio</h2>
+<p>Modelos prontos para copiar — com <strong>exemplo real
+preenchido</strong>, para você ver como fica no dia a dia antes de
+adaptar à sua sprint. (Versões em branco para duplicar continuam nos
+<strong>apêndices</strong>, no final do livro.)</p>
+<h3 id="status-semanal">Status semanal</h3>
+<p>Poste toda sexta-feira no canal do time. Três blocos bastam:
+<strong>fechado</strong>, <strong>encontrado</strong>,
+<strong>próximo</strong>. Release é opcional, mas vale quando há data de
+deploy na semana seguinte.</p>
+<p><strong>Modelo:</strong></p>
+<div class="qa-status modelo">
+<div class="qa-status-head">
+QA — semana [DD/MM]
+</div>
+<div class="qa-status-row type-fechado">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Fechado</span>
+<p><em>[1–3 entregas com resultado, não só tarefa]</em></p>
+</div>
+<div class="qa-status-row type-encontrado">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Encontrado</span>
+<p><em>[bugs/riscos relevantes + impacto em uma linha]</em></p>
+</div>
+<div class="qa-status-row type-proximo">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Próximo</span>
+<p><em>[foco da semana que vem]</em></p>
+</div>
+<div class="qa-status-row type-release qa-status-row-last">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Release</span>
+<p><em>[X.Y — no prazo / risco / bloqueio — opcional]</em></p>
+</div>
+</div>
+<p><strong>Exemplo real</strong> — sprint com release de checkout na
+fila (mesmo cenário do SAR-QA deste capítulo):</p>
+<div class="qa-status exemplo">
+<div class="qa-status-head">
+QA — semana 14/03
+</div>
+<div class="qa-status-row type-fechado">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Fechado</span>
+<p>Fluxo de pagamento validado (3 gateways + PIX); regressão da release
+2.4 concluída — 2 bugs P1 bloqueados antes do deploy</p>
+</div>
+<div class="qa-status-row type-encontrado">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Encontrado</span>
+<p>Race condition no carrinho ao aplicar cupom 2× — risco de cobrança
+duplicada se fosse para prod</p>
+</div>
+<div class="qa-status-row type-proximo">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Próximo</span>
+<p>Cobertura de API do carrinho + reteste do cupom após fix do time de
+backend</p>
+</div>
+<div class="qa-status-row type-release qa-status-row-last">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Release 2.4</span>
+<p>No prazo — deploy liberado sem rollback; monitorar cupom na primeira
+hora pós-prod</p>
+</div>
+</div>
+<p>Repare no que torna este post útil — e no que você deve evitar:</p>
+<ul>
+<li><strong>Fechado</strong> não diz “testei checkout”. Diz <em>o que
+mudou</em>: gateways cobertos, P1 bloqueados, deploy liberado. É
+resultado, não atividade.</li>
+<li><strong>Encontrado</strong> traz impacto em uma linha (<em>cobrança
+duplicada</em>), não só o título do bug no Jira.</li>
+<li><strong>Próximo</strong> orienta o time sobre foco e dependência —
+não é lista genérica de “continuar testes”.</li>
+<li><strong>Release</strong> amarra a narrativa a uma data e a um risco
+residual — útil para Product Owner (PO) e Engineering Manager (EM) na
+segunda-feira.</li>
+</ul>
+<p><strong>Versão fraca (não poste assim):</strong></p>
+<div class="qa-status fraco">
+<div class="qa-status-head">
+QA — semana 14/03
+</div>
+<div class="qa-status-row type-fechado">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Fechado</span>
+<p>Testes da sprint</p>
+</div>
+<div class="qa-status-row type-encontrado">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Encontrado</span>
+<p>Alguns bugs</p>
+</div>
+<div class="qa-status-row type-proximo">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Próximo</span>
+<p>Seguir testando</p>
+</div>
+<div class="qa-status-row type-release qa-status-row-last">
+<span class="qa-status-icon">•</span>
+<span class="qa-status-label">Release 2.4</span>
+<p>Em progresso</p>
+</div>
+</div>
+<p>Mesma estrutura, zero informação acionável. Quem lê não sabe o que
+priorizar, o que comemorar nem o que escalonar.</p>
+<p><strong>Como encaixar o SAR-QA:</strong> cada bloco do status é um
+pedaço do framework. <em>Fechado</em> = Ação + Resultado.
+<em>Encontrado</em> = Situação + Resultado (o risco evitado).
+<em>Próximo</em> = Próximo passo. Você não precisa escrever “Situação:”
+explicitamente — a narrativa já carrega.</p>
+<p>Guia de <strong>ferramentas e configurações</strong> (lembrete no
+Slack, workflow, pin no canal) está nos <strong>apêndices</strong> —
+para quando for automatizar o hábito no laboratório.</p>
+<h2 class="laboratorio-capitulo"
+id="laboratório-do-capítulo">Laboratório do capítulo</h2>
+<p>Execute estas atividades na <strong>próxima sprint</strong>. Cada uma
+tem entregável e critério de “feito”. Tempo total estimado: <strong>3–4
+horas</strong> espalhadas pela sprint — não faça tudo num dia.</p>
+<h3 id="atividade-1-auditoria-de-visibilidade-45-min">Atividade 1 —
+Auditoria de visibilidade (45 min)</h3>
+<p><strong>Objetivo:</strong> descobrir o que você entregou vs. o que o
+time de fato soube.</p>
+<ol type="1">
+<li>Liste tudo que você entregou na sprint passada (bugs encontrados,
+histórias validadas, automações, documentação).</li>
+<li>Para cada item, marque: <em>alguém fora de QA mencionou ou reagiu a
+isso?</em> (sim/não)</li>
+<li>Classifique os “não” por motivo: esqueci de comunicar / comuniquei
+mal / ninguém estava olhando.</li>
+<li>Escolha <strong>os 3 itens de maior impacto</strong> que ficaram
+invisíveis e reescreva cada um em formato SAR-QA.</li>
+</ol>
+<p><strong>Entregável:</strong> tabela com pelo menos 8 itens auditados
++ 3 reescritos em SAR-QA.</p>
+<p><strong>Feito quando:</strong> você consegue apontar qual item
+invisível teria mudado uma decisão se tivesse sido comunicado a
+tempo.</p>
+<h3 id="atividade-2-status-semanal-por-4-semanas-15-minsemana">Atividade
+2 — Status semanal por 4 semanas (15 min/semana)</h3>
+<p><strong>Objetivo:</strong> instalar o hábito antes de confiar na
+motivação.</p>
+<ol type="1">
+<li>Agende lembrete recorrente (sexta-feira, mesmo horário).</li>
+<li>Poste no canal do time usando o <strong>modelo de status
+semanal</strong> em Materiais de apoio — adapte o exemplo real à sua
+sprint, não reinvente a estrutura. Faça isso durante <strong>4 semanas
+seguidas</strong>, sem falhar.</li>
+<li>Na 4ª semana, pergunte a um colega ou ao Engineering Manager (EM):
+<em>“Está claro o que QA está fazendo?”</em> Anote a resposta.</li>
+</ol>
+<p><strong>Entregável:</strong> 4 posts + nota com feedback
+recebido.</p>
+<p><strong>Feito quando:</strong> alguém referencia seu status
+espontaneamente (“vi no seu update de sexta…”).</p>
+<h3 id="atividade-3-upgrade-de-3-bugs-com-impacto-30-min">Atividade 3 —
+Upgrade de 3 bugs com impacto (30 min)</h3>
+<p><strong>Objetivo:</strong> praticar documentação que gera prioridade,
+não só registro.</p>
+<ol type="1">
+<li>Abra 3 bugs que você reportou (recentes ou históricos).</li>
+<li>Para cada um, adicione seção <strong>Impacto</strong> usando o
+template do <strong>Apêndice A</strong>.</li>
+<li>Se o bug ainda estiver aberto, @ menção ao Product Owner (PO) ou dev
+com uma linha SAR-QA no comentário.</li>
+</ol>
+<p><strong>Entregável:</strong> 3 tickets atualizados.</p>
+<p><strong>Feito quando:</strong> pelo menos 1 ticket teve resposta ou
+mudança de prioridade atribuível ao contexto de impacto.</p>
+<h3 id="atividade-4-kit-de-cerimônia-20-min-uso-contínuo">Atividade 4 —
+Kit de cerimônia (20 min + uso contínuo)</h3>
+<p><strong>Objetivo:</strong> nunca mais entrar mudo numa reunião.</p>
+<ol type="1">
+<li>Fixe o template “Preparação para cerimônia” (Apêndice A) no bloco de
+notas.</li>
+<li>Use em <strong>todas as dailies/plannings</strong> da sprint.</li>
+<li>Registre quantas vezes você falou vs. ficou calado.</li>
+</ol>
+<p><strong>Entregável:</strong> checklist preenchido por reunião (pode
+ser privado).</p>
+<p><strong>Feito quando:</strong> você contribuiu com pelo menos
+<strong>1 fala substantiva por cerimônia</strong> durante 5 dias
+úteis.</p>
+<h3 id="atividade-5-página-de-release-ou-post-mortem-1-h">Atividade 5 —
+Página de release ou post-mortem (1 h)</h3>
+<p><strong>Objetivo:</strong> criar artefato persistente — visibilidade
+que não depende de você estar na sala.</p>
+<ol type="1">
+<li>Escolha a release ou iniciativa atual.</li>
+<li>Crie página (Confluence/Notion/Markdown no repo) usando o template
+de post-mortem do <strong>Apêndice A</strong>.</li>
+<li>Compartilhe link no canal do time ao fechar a sprint.</li>
+</ol>
+<p><strong>Entregável:</strong> 1 página publicada + link
+compartilhado.</p>
+<p><strong>Feito quando:</strong> alguém usa a página em reunião ou
+comenta no link.</p>
+<h3 id="checklist-de-conclusão-do-laboratório">Checklist de conclusão do
+laboratório</h3>
+<p>Marque ao final da sprint:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Auditoria de visibilidade
+concluída</label></li>
+<li><label><input type="checkbox" />4 status semanais
+publicados</label></li>
+<li><label><input type="checkbox" />3 bugs com seção de
+impacto</label></li>
+<li><label><input type="checkbox" />Fala substantiva em cerimônias (5
+dias)</label></li>
+<li><label><input type="checkbox" />Post-mortem ou página de release
+compartilhada</label></li>
+</ul>
+<p>Se completou 4 de 5, o capítulo cumpriu o objetivo. O quinto item
+vira meta da sprint seguinte.</p>
+<h2 id="leituras-recomendadas">Leituras recomendadas</h2>
+<ul>
+<li><strong><a
+href="https://www.goodreads.com/book/show/9789221.StoryBrand">StoryBrand</a></strong>,
+de Donald Miller — narrativa clara para comunicar valor sem inflar
+resultado.</li>
+<li><strong><a
+href="https://www.amazon.com.br/Storytelling-Dados-Visualiza%C3%A7%C3%A3o-Profissionais-Neg%C3%B3cios/dp/8550804681">Storytelling
+com Dados</a></strong>, de Cole Nussbaum Knaflic — números dentro de
+história, não métricas soltas.</li>
+<li><strong><a
+href="https://www.amazon.com.br/Comece-pelo-Porqu%C3%AA-Simon-Sinek/dp/854650479X">Comece
+pelo Porquê</a></strong>, de Simon Sinek — por que visibilidade sem
+propósito não convence ninguém.</li>
+<li><strong><a
+href="https://www.amazon.com.br/Minutos-Falar-Bem-Publico-Comunicador/dp/8535210956">29
+Minutos para Falar Bem em Público</a></strong>, de Reinaldo Polito —
+cerimônias e updates com objetividade.</li>
+<li><strong><a
+href="https://www.goodreads.com/book/show/18249439-show-your-work">Show
+Your Work</a></strong>, de Austin Kleon — tornar o processo visível, não
+só o resultado final.</li>
+<li><strong><a
+href="https://www.goodreads.com/book/show/6910327-the-personal-mba">The
+Personal MBA</a></strong>, de Josh Kaufman — traduzir trabalho técnico
+em impacto que outros entendem.</li>
+</ul>
+<hr />
+<p><em>Você já entregou algo bom que ninguém percebeu? Escolha uma
+atividade do laboratório, execute nesta sprint, e volte aqui na retro
+para marcar o checklist.</em></p>
+</body>
+</html>

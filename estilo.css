@@ -26,6 +26,657 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+/* Abertura moderna de capítulos */
+h1.capitulo {
+  border: none;
+  padding: 0;
+  margin-top: 3.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.15;
+}
+
+h1.capitulo .capitulo-num {
+  display: block;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.42em;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: #666;
+  margin-bottom: 0.85em;
+}
+
+h1.capitulo .capitulo-titulo {
+  display: block;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 1.55em;
+  font-weight: bold;
+  color: #111;
+  line-height: 1.12;
+}
+
+.capitulo-ficha {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #666;
+}
+
+.capitulo-ficha p {
+  margin: 0;
+}
+
+.capitulo-ficha-tema {
+  flex: 1 1 45%;
+  text-align: left;
+}
+
+.capitulo-ficha-origem {
+  flex: 1 1 45%;
+  text-align: right;
+}
+
+.capitulo-ficha-origem p {
+  text-align: right;
+}
+
+/* Framework GAME — cards por elemento */
+.game {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.35rem 0 1.75rem;
+  padding: 1.1rem;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(145deg, #f8fafc 0%, #eef2f7 100%);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.game-item {
+  position: relative;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.95rem 1rem 1rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.game-item:hover {
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.game-item-letter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 10px;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.game-item--goal .game-item-letter {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.game-item--action .game-item-letter {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.game-item--measure .game-item-letter {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.game-item--expectation .game-item-letter {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.game-item-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.game-item-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-item-label {
+  flex: 0 0 auto;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.game-item--goal .game-item-label { color: #1d4ed8; }
+.game-item--action .game-item-label { color: #15803d; }
+.game-item--measure .game-item-label { color: #c2410c; }
+.game-item--expectation .game-item-label { color: #6d28d9; }
+
+.game-item-prompt {
+  flex: 1 1 auto;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #64748b;
+  text-align: right;
+}
+
+.game-item-example {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.game-item > p {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.game-item-example em,
+.game-item > p em {
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .game {
+    grid-template-columns: 1fr;
+    padding: 0.85rem;
+  }
+
+  .game-item-prompt {
+    flex-basis: 100%;
+    text-align: left;
+  }
+}
+
+/* Métricas — layout em coluna única, título e rótulo na mesma linha */
+.game.metricas {
+  grid-template-columns: 1fr;
+  background: #f8fafc;
+}
+
+.game.metricas .game-item {
+  flex-direction: column;
+  gap: 0;
+}
+
+.game.metricas .game-item-letter {
+  display: none;
+}
+
+.game.metricas .game-item-header {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.game.metricas .game-item-label {
+  flex: 1 1 auto;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.92rem;
+  color: #0055aa;
+}
+
+.game.metricas .game-item-prompt {
+  flex: 0 0 auto;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  color: #666;
+}
+
+/* Página dedicada — framework GAME */
+.game-spread {
+  page-break-before: always;
+  break-before: page;
+  page-break-after: always;
+  break-after: page;
+  min-height: calc(100vh - 3rem);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.15rem;
+  margin: 2.5rem 0;
+  padding: 2.25rem 1.5rem 2rem;
+  border-radius: 18px;
+  border: 1px solid #dbe4f0;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(0, 85, 170, 0.07) 0%, transparent 52%),
+    radial-gradient(ellipse at 88% 100%, rgba(109, 40, 217, 0.06) 0%, transparent 48%),
+    linear-gradient(165deg, #f8fafc 0%, #eef2f7 48%, #f1f5f9 100%);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04), 0 16px 40px rgba(15, 23, 42, 0.07);
+}
+
+.game-spread-hero {
+  text-align: center;
+  margin-bottom: 0.15rem;
+}
+
+.game-spread-hero h3 {
+  margin: 0 0 0.55rem;
+  padding: 0;
+  border: none;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: clamp(1.65rem, 4vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0055aa;
+  line-height: 1.15;
+}
+
+.game-spread-hero p {
+  margin: 0;
+  text-align: center;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.98rem;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.game-spread-intro p {
+  margin: 0 0 0.85rem;
+  text-align: center;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #334155;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-spread-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.game-spread .game.game-grid {
+  flex: 1 1 auto;
+  margin: 0.35rem 0 0.15rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.game-spread-rule p {
+  margin: 0;
+  padding: 0.95rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid #bfdbfe;
+  background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #1e3a5f;
+  text-align: center;
+}
+
+.game-spread-channels {
+  margin-top: 0.15rem;
+}
+
+.game-spread-channels::before {
+  content: "Onde usar";
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  text-align: center;
+}
+
+.game-spread-channels ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game-spread-channels li {
+  margin: 0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.35;
+}
+
+.game-spread-footer p {
+  margin: 0.25rem 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #64748b;
+  font-style: italic;
+}
+
+@media print {
+  .game-spread {
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .game-spread {
+    min-height: auto;
+    padding: 1.5rem 1rem 1.75rem;
+  }
+
+  .game-spread-channels ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .game-spread-channels li {
+    text-align: center;
+  }
+}
+
+/* Canais de comunicação — cards com badge */
+.qa-canal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.35rem 0 1.75rem;
+}
+
+.qa-canal-item {
+  border: 1px solid #dce4ef;
+  border-left: 4px solid #0055aa;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 0.85rem 1.1rem 0.95rem;
+}
+
+.qa-canal-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.qa-canal-item-label {
+  flex: 1 1 auto;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0055aa;
+  line-height: 1.3;
+}
+
+.qa-canal-item-freq {
+  flex: 0 0 auto;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0055aa;
+  background: #e8f0fa;
+  border-radius: 999px;
+  padding: 0.22rem 0.7rem;
+  white-space: nowrap;
+}
+
+.qa-canal-item-body,
+.qa-canal-item > p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+/* Status semanal — card formatado */
+.qa-status {
+  display: flex;
+  flex-direction: column;
+  margin: 0.35rem 0 1.5rem;
+  padding: 0;
+  border: 1px solid #c5d6eb;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px rgba(0, 40, 80, 0.09), 0 1px 2px rgba(0, 40, 80, 0.05);
+}
+
+p + .qa-status {
+  margin-top: 0.25rem;
+}
+
+p:has(+ .qa-status) {
+  margin-bottom: 0.25rem;
+}
+
+.qa-status.modelo {
+  border-style: dashed;
+  background: #f4f8fc;
+}
+
+.qa-status.modelo .qa-status-head {
+  background: #4a7ab0;
+}
+
+.qa-status.fraco {
+  border-color: #e8c4a0;
+  background: #fffaf5;
+}
+
+.qa-status-head {
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background: #0055aa;
+  color: #fff;
+  padding: 0.9rem 1.35rem;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 0.97rem;
+  letter-spacing: 0.02em;
+  border-radius: 9px 9px 0 0;
+}
+
+.qa-status.fraco .qa-status-head {
+  background: #b45309;
+}
+
+.qa-status-row {
+  display: grid;
+  grid-template-columns: 0.7rem auto 1fr;
+  gap: 0.35rem 0.8rem;
+  padding: 0.85rem 1.35rem;
+  border-top: 1px solid #e4ecf5;
+  align-items: center;
+}
+
+.qa-status-row:first-of-type {
+  border-top: none;
+  padding-top: 1.1rem;
+}
+
+.qa-status-row-last {
+  padding-bottom: 0.9rem;
+}
+
+/* Bullet colorido — oculta o "•" e renderiza via CSS */
+.qa-status-icon {
+  font-size: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #94a3b8;
+  flex-shrink: 0;
+  justify-self: center;
+}
+
+/* Cores do bullet por tipo de linha */
+.qa-status-row.type-fechado    .qa-status-icon { background: #16a34a; }
+.qa-status-row.type-encontrado .qa-status-icon { background: #ea580c; }
+.qa-status-row.type-proximo    .qa-status-icon { background: #2563eb; }
+.qa-status-row.type-release    .qa-status-icon { background: #7c3aed; }
+
+/* Badge de label colorido por tipo */
+.qa-status-label {
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.18em 0.55em;
+  border-radius: 4px;
+  color: #0055aa;
+  background: #e0eaf8;
+  line-height: 1.6;
+  align-self: center;
+}
+
+.qa-status-row.type-fechado    .qa-status-label { color: #15803d; background: #dcfce7; }
+.qa-status-row.type-encontrado .qa-status-label { color: #c2410c; background: #fff0e6; }
+.qa-status-row.type-proximo    .qa-status-label { color: #1d4ed8; background: #eff6ff; }
+.qa-status-row.type-release    .qa-status-label { color: #6d28d9; background: #f5f3ff; }
+
+/* Variante "fraco" — badge laranja uniforme em todos os itens */
+.qa-status.fraco .qa-status-icon { background: #d97706; }
+.qa-status.fraco .qa-status-label { color: #92400e; background: #fef3c7; }
+
+.qa-status-body {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  color: #222;
+  align-self: center;
+}
+
+.qa-status.modelo .qa-status-body {
+  color: #64748b;
+}
+
+.qa-status.modelo .qa-status-body em {
+  font-style: italic;
+}
+
+.qa-status.fraco .qa-status-body {
+  color: #666;
+}
+
+/* Glossário — apêndice de siglas */
+h1.apendice ~ p {
+  margin-bottom: 1.1rem;
+  line-height: 1.55;
+}
+
+h1.apendice ~ p > strong {
+  font-family: "Segoe UI", Calibri, sans-serif;
+  color: #0055aa;
+}
+
+.capitulo-meta {
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.88rem;
+  color: #666;
+  margin: 0 0 1.75rem;
+  line-height: 1.5;
+}
+
+.epigrafe-capitulo {
+  margin: 1.25rem auto 1.5rem;
+  max-width: 92%;
+  padding: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #444;
+  text-align: center;
+}
+
+.epigrafe-capitulo p {
+  margin-bottom: 0;
+}
+
+.epigrafe-capitulo p:first-child {
+  font-style: italic;
+  margin-bottom: 0.45rem;
+}
+
+.epigrafe-capitulo p:last-child:not(:only-child) {
+  font-style: normal;
+  font-size: 0.82rem;
+  text-align: center;
+  color: #666;
+  letter-spacing: 0.02em;
+}
+
+h2.laboratorio-capitulo {
+  page-break-before: always;
+  break-before: page;
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+h1.apendice {
+  page-break-before: always;
+  break-before: page;
+  margin-top: 3rem;
+  font-size: 1.75rem;
+  border-bottom: 2px solid #0055aa;
+  padding-bottom: 0.5rem;
+}
+
+div.apendice-quebra {
+  page-break-before: always;
+  break-before: page;
+}
+
 h2 {
   font-size: 1.4rem;
   font-weight: bold;
@@ -34,6 +685,11 @@ h2 {
   margin-bottom: 1rem;
   border-left: 4px solid #0055aa;
   padding-left: 0.7rem;
+}
+
+h2.apos-passos-praticos {
+  page-break-before: always;
+  break-before: page;
 }
 
 h3 {
@@ -164,16 +820,6 @@ nav#TOC {
   border-radius: 8px;
   padding: 1.2rem 1.5rem;
   margin-bottom: 3rem;
-  color: #1a1a1a;
-}
-
-nav#TOC a {
-  color: #1a1a1a;
-}
-
-nav#TOC a:hover {
-  color: #000;
-  text-decoration: underline;
 }
 
 nav#TOC ul {
@@ -182,4 +828,120 @@ nav#TOC ul {
 
 nav#TOC > ul {
   margin-top: 0.5rem;
+}
+
+/* Sumário: seções em destaque, capítulos indentados */
+nav#TOC a[href*="parte-"],
+nav#TOC a[href*="pref"],
+nav#TOC a[href*="introdu"],
+nav#TOC a[href*="abertura"],
+nav#TOC a[href*="fechamento"],
+nav#TOC a[href*="conclus"] {
+  font-weight: bold;
+  font-family: "Segoe UI", Calibri, sans-serif;
+}
+
+nav#TOC a[href*="capítulo-"],
+nav#TOC a[href*="capitulo-"] {
+  display: inline-block;
+  padding-left: 1.25em;
+}
+
+/* ============================================
+   CAPAS DE SEÇÃO (partes temáticas)
+   Aplicadas aos títulos com a classe .parte
+   ============================================ */
+h1.parte.secao-terco,
+h1.parte.prefacio-layout {
+  margin-top: 0;
+  min-height: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+div.parte-prefacio-titulo {
+  min-height: 33vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+div.parte-prefacio-titulo h1.parte {
+  margin-top: 0;
+  min-height: auto;
+}
+
+div.parte-secao-texto {
+  page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+div.parte-secao-texto h1.parte {
+  margin-top: 15vh;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  min-height: auto;
+}
+
+h1.parte {
+  page-break-before: always;
+  break-before: page;
+  margin-top: 32vh;
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  color: #111;
+  border: none;
+  padding: 0;
+}
+
+h1.parte .parte-num {
+  display: block;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 0.55em;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 0.6em;
+}
+
+h1.parte .parte-nome {
+  display: block;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #0055aa;
+  line-height: 1.2;
+}
+
+/* Epígrafe da parte (linha inicial em itálico, centralizada) */
+.parte-epigrafe {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #555;
+  margin: 0.85rem 0 1rem;
+}
+
+.parte-epigrafe p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Parágrafo de introdução da parte (centralizado, como na capa) */
+.parte-epigrafe + p,
+h1.parte + p + p {
+  text-align: center;
+  color: #333;
 }

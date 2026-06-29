@@ -1,4 +1,4 @@
-# Prefácio {.unnumbered}
+# Prefácio {.parte .unnumbered}
 
 Durante quatro anos seguidos, eu recebi quase sempre o mesmo feedback. As palavras mudavam de ciclo para ciclo — de líderes diferentes, em contextos diferentes, com sofisticação crescente — mas o fundo era o mesmo. Em 2022 era "fale mais nas cerimônias". Em 2025 era "metrics-driven storytelling". A linguagem evoluiu. O gap, não.
 
@@ -18,9 +18,15 @@ O título de cada capítulo segue sempre a mesma fórmula: "fiz X, não fiz Y". 
 
 Cada capítulo segue a mesma estrutura, para que você consiga voltar a qualquer um deles e encontrar rápido o que precisa:
 
-A **origem** mostra de onde veio o feedback — em que ciclo, em que contexto, com que palavras. **Onde errei** é o relato honesto da falha, sem maquiagem. **O que aprendi** é a virada de chave, a ideia que demorou anos para ficar clara. **Como acertar** traduz esse aprendizado em uma mudança concreta de comportamento. Os **passos práticos** são as ações específicas que você pode aplicar já na próxima sprint. E, ao final, uma seção de **leituras recomendadas** para quem quiser ir além.
+A **origem** mostra de onde veio o feedback — em que ciclo, em que contexto, com que palavras. **Onde errei** é o relato honesto da falha, sem maquiagem. **O que aprendi** é a virada de chave, a ideia que demorou anos para ficar clara. **Como acertar** traduz esse aprendizado em uma mudança concreta de comportamento. Os **passos práticos** são as ações específicas que você pode aplicar já na próxima sprint.
 
-A ideia é que cada capítulo funcione sozinho. Você pode ler na ordem ou pular direto para o tema que mais dói no seu momento de carreira.
+A partir daqui, o livro vai além do que você encontraria num artigo: **aplicação em QA** aprofunda o tema no contexto técnico do dia a dia; o **laboratório do capítulo** propõe atividades com entregável e critério de conclusão para você executar numa sprint real (sempre em página própria, separado do texto principal), seguido de **leituras recomendadas** para aprofundar o tema — tudo no fluxo do capítulo, sem página extra.
+
+**Templates**, **ferramentas**, o **glossário de siglas** e outros materiais de consulta ficam nos **apêndices**, no final do livro — para copiar ou consultar quando precisar, sem interromper a leitura.
+
+No final do livro, a seção **Referências** reúne a ficha temática de cada capítulo (tema e origem do feedback).
+
+A ideia é que cada capítulo funcione sozinho. Você pode ler na ordem ou pular direto para o tema que mais dói no seu momento de carreira. Aqui os capítulos estão organizados por tema — não na ordem em que os episódios foram publicados na série do LinkedIn —, então, se você veio do feed, a sequência será diferente da que acompanhou por lá.
 
 ## Para quem é este livro
 

@@ -1,7 +1,10 @@
 # Capítulo 2 — Automatizei antes de testar. E atrasei a entrega.
 
-> **Tema:** sequenciamento no sprint
-> **Origem do feedback:** mid-review de 2024 e ciclo anual de 2025
+::: capitulo-epigrafe
+*"A otimização prematura é a raiz de todos os males."*
+
+— Donald Knuth
+:::
 
 ## A origem
 
@@ -39,7 +42,7 @@ A automação só começa depois que o happy path foi validado manualmente. E ca
 4. **Automatize as tarefas de impacto médio depois da validação manual da tarefa de alto impacto — nunca antes.** A ordem importa mais do que a quantidade de cobertura.
 5. **Na retrospectiva, revise se houve tarefas de alto impacto paradas enquanto tarefas menores avançavam.** Esse é o sintoma clássico de sequenciamento invertido — e o melhor lugar para corrigi-lo antes que vire feedback de review.
 
-## Para ir além
+## Leituras recomendadas
 
 - **[Essencialismo](https://www.amazon.com.br/Essencialismo-Greg-Mckeown/dp/8543102146)**, de Greg McKeown — sobre fazer menos, porém o que realmente importa, na ordem certa.
 - **[A Única Coisa](https://www.amazon.com.br/%C3%9Anica-coisa-foco-importa/dp/8542210289)**, de Gary Keller — a pergunta que organiza qualquer dia: qual é a única coisa que, se feita agora, torna o resto mais fácil ou desnecessário?

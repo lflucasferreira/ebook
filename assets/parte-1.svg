@@ -1,0 +1,13 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- massa submersa (o trabalho que ninguém vê) -->
+  <path d="M40 58 L24 74 L20 92 L34 106 L60 112 L86 105 L100 90 L96 72 L80 58 Z"
+        fill="#0055aa" fill-opacity="0.12" stroke="#0055aa" stroke-opacity="0.40"
+        stroke-width="2.2" stroke-linejoin="round"/>
+  <!-- ponta acima da água (o que o time vê) -->
+  <path d="M45 58 L55 36 L62 47 L70 30 L78 58 Z"
+        fill="#0055aa" fill-opacity="0.92" stroke="#0055aa"
+        stroke-width="2.2" stroke-linejoin="round"/>
+  <!-- linha d'água -->
+  <path d="M8 58 H112" stroke="#0055aa" stroke-width="2.4" stroke-linecap="round"
+        stroke-dasharray="0.1 7" opacity="0.55"/>
+</svg>

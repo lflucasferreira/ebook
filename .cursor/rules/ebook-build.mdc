@@ -1,0 +1,15 @@
+---
+description: Sempre compilar o ebook após editar arquivos
+globs: "*.md,metadata.yaml,estilo.css,capa-pdf.tex,ficha-catalografica.tex,compilar.sh"
+alwaysApply: false
+---
+
+Ao terminar qualquer alteração nos arquivos do livro, execute:
+
+```bash
+bash compilar.sh
+```
+
+Isso gera PDF, HTML e EPUB em `dist/`.
+
+Não encerre a tarefa sem confirmar que a compilação terminou com sucesso.

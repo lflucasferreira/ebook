@@ -8,6 +8,8 @@
 \usepackage{tocloft}
 \usepackage{etoolbox}
 \usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
 
 \definecolor{linkblue}{HTML}{0055AA}
 \colorlet{chaptercolor}{linkblue}
@@ -27,23 +29,588 @@
   }%
 }
 
-% Capítulos numerados: "Capítulo X" acima, título abaixo, alinhados à esquerda
+% Capítulos: rótulo explícito, título grande, abertura compacta
+
+\newcommand{\capitulolabel}[1]{%
+  \begingroup
+  \noindent
+  \raggedright
+  \sffamily
+  \addfontfeatures{LetterSpace=3.0}%
+  \scshape
+  \fontsize{10}{12}\selectfont
+  \color{black!50}%
+  #1%
+  \endgroup
+}
+\newcommand{\capitulotitulo}[1]{%
+  \begingroup
+  \noindent
+  \raggedright
+  \sffamily
+  \bfseries
+  \fontsize{24}{29}\selectfont
+  \color{black}%
+  #1%
+  \endgroup
+}
+\newcommand{\capituloabertura}[2]{%
+  \refstepcounter{chapter}%
+  \chaptermark{#2}%
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#2}%
+  \thispagestyle{empty}%
+  \begingroup
+  \setlength{\parindent}{0pt}%
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt plus 0pt}%
+  \raggedright
+  \capitulolabel{#1}\par\vspace{1em}%
+  \capitulotitulo{#2}\par\vspace{1.25em}%
+  \endgroup
+  \par\normalfont\normalsize
+}
+\newenvironment{capitulo-inicio}{%
+  \begin{samepage}%
+}{%
+  \end{samepage}%
+}
+
 \titleformat{\chapter}[display]
-  {\normalfont\sffamily\bfseries\raggedright}
-  {\Large\chaptertitlename\ \thechapter}
-  {0.75em}
-  {\fontsize{22}{28}\selectfont}
+  {\normalfont}
+  {%
+    \noindent
+    \raggedright
+    \sffamily
+    \addfontfeatures{LetterSpace=3.0}%
+    \scshape
+    \fontsize{10}{12}\selectfont
+    \color{black!50}%
+    \chaptertitlename~\thechapter%
+  }
+  {1.5em}
+  {%
+    \noindent
+    \raggedright
+    \sffamily
+    \bfseries
+    \fontsize{24}{29}\selectfont
+    \color{black}%
+  }
+  [{\thispagestyle{empty}}]
 
 % Prefácio, conclusão etc. (sem número)
 \titleformat{name=\chapter,numberless}[display]
   {\normalfont\sffamily\bfseries\raggedright}
   {}
   {0pt}
-  {\fontsize{22}{28}\selectfont}
+  {\fontsize{28}{34}\selectfont}
+  [{\thispagestyle{empty}}]
 
-\titlespacing*{\chapter}{0pt}{24pt}{24pt}
+\titlespacing*{\chapter}{0pt}{0pt}{28pt}
 
-\AtBeginDocument{\renewcommand{\chaptername}{Capítulo}}
+\AtBeginDocument{%
+  \renewcommand{\chaptername}{Capítulo}%
+  \setcounter{secnumdepth}{2}%
+}
+
+\newcommand{\epigrafequote}[1]{%
+  {\itshape #1\par}%
+}
+
+\newcommand{\epigrafeautor}[1]{%
+  \par\vspace{0.45em}%
+  {\normalfont\fontsize{9.5}{13}\selectfont\color{black!45}#1\par}%
+}
+
+\newenvironment{capitulo-epigrafe}{%
+  \par\vspace{0.35em}%
+  \begingroup
+  \centering
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \fontsize{10.75}{16.75}\selectfont
+  \color{black!58}%
+}{%
+  \par
+  \endgroup
+  \par\vspace{0.85em}%
+  \nopagebreak[4]%
+}
+
+% Framework GAME (cards por elemento)
+\newenvironment{game}{%
+  \par\vspace{0.35em}%
+  \begingroup
+  \setlength{\parindent}{0pt}%
+}{%
+  \endgroup
+  \par\vspace{0.5em}%
+}
+
+\newcommand{\gameitem}[3]{%
+  \par\vspace{0.55em}%
+  \noindent
+  \begingroup
+  \setlength{\fboxrule}{0.4pt}%
+  \setlength{\fboxsep}{9pt}%
+  \fcolorbox{black!14}{black!3.5}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+      \vspace{0.15em}%
+      \noindent
+      \begin{minipage}[t]{0.22\textwidth}%
+        \raggedright
+        \sffamily\bfseries\fontsize{9.5}{12}\selectfont\color{linkblue}%
+        #1%
+      \end{minipage}%
+      \hfill
+      \begin{minipage}[t]{0.74\textwidth}%
+        \raggedleft
+        \normalfont\fontsize{9.5}{12}\selectfont\color{black!52}%
+        #2%
+      \end{minipage}%
+      \par\vspace{0.45em}%
+      \noindent
+      {\itshape\fontsize{10.25}{14.5}\selectfont\color{black!82}#3\par}%
+      \vspace{0.15em}%
+    }%
+  }%
+  \endgroup
+  \par
+}
+
+\newcommand{\gamemetricitem}[3]{%
+  \par\vspace{0.55em}%
+  \noindent
+  \begingroup
+  \setlength{\fboxrule}{0.4pt}%
+  \setlength{\fboxsep}{9pt}%
+  \fcolorbox{black!14}{black!3.5}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+      \vspace{0.15em}%
+      \noindent
+      \begin{minipage}[t]{0.62\textwidth}%
+        \raggedright
+        \sffamily\bfseries\fontsize{9.5}{12}\selectfont\color{linkblue}%
+        #1%
+      \end{minipage}%
+      \hfill
+      \begin{minipage}[t]{0.34\textwidth}%
+        \raggedleft
+        \normalfont\fontsize{9.5}{12}\selectfont\color{black!52}%
+        #2%
+      \end{minipage}%
+      \par\vspace{0.4em}%
+      \noindent
+      {\itshape\fontsize{10.25}{14.5}\selectfont\color{black!82}#3\par}%
+      \vspace{0.15em}%
+    }%
+  }%
+  \endgroup
+  \par
+}
+
+% Página dedicada ao framework GAME
+\newenvironment{gamespread}{%
+  \clearpage
+  \thispagestyle{plain}
+  \begingroup
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \vspace*{0.35em}%
+}{%
+  \par\vspace*{\fill}%
+  {\centering\sffamily\fontsize{8.5}{10.5}\selectfont\addfontfeatures{LetterSpace=1.8}\scshape\color{black!38}Framework de visibilidade proativa\par}%
+  \vspace{0.35em}%
+  \endgroup
+  \clearpage
+}
+
+\newcommand{\gamespreadtitle}[1]{%
+  \par\vspace{0.15em}%
+  \noindent\centering
+  {\sffamily\bfseries\fontsize{24}{28}\selectfont\color{linkblue}#1\par}%
+  \vspace{0.55em}%
+}
+
+\newcommand{\gamespreadacronym}[1]{%
+  \noindent\centering
+  {\fontsize{10.75}{14}\selectfont\color{black!58}#1\par}%
+  \vspace{1.15em}%
+}
+
+\newcommand{\gamespreadintro}[1]{%
+  \noindent
+  {\fontsize{11}{16.5}\selectfont\color{black!82}#1\par}%
+  \vspace{0.85em}%
+}
+
+\newcommand{\gamespreadpara}[1]{%
+  \noindent
+  {\fontsize{10.75}{16}\selectfont\color{black!78}#1\par}%
+  \vspace{0.65em}%
+}
+
+\newcommand{\gamespreadrule}[1]{%
+  \par\vspace{0.45em}%
+  \noindent
+  \begingroup
+  \setlength{\fboxrule}{0.55pt}%
+  \setlength{\fboxsep}{11pt}%
+  \fcolorbox{linkblue!28}{linkblue!6}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+      {\fontsize{10.75}{15.5}\selectfont\color{black!86}#1\par}%
+    }%
+  }%
+  \endgroup
+  \par\vspace{0.75em}%
+}
+
+\newcommand{\gamespreadchannels}[1]{%
+  \par\vspace{0.25em}%
+  \noindent{\sffamily\bfseries\fontsize{9.75}{12}\selectfont\color{black!62}Onde usar\par}%
+  \vspace{0.4em}%
+  \begingroup
+  \setlength{\parskip}{0.25em}%
+  \fontsize{10.25}{14.5}\selectfont\color{black!74}%
+  #1%
+  \endgroup
+  \par\vspace{0.55em}%
+}
+
+\newcommand{\gamespreadfooter}[1]{%
+  \par\vspace{0.35em}%
+  \noindent\centering
+  {\fontsize{10.25}{15}\selectfont\color{black!62}\itshape #1\par}%
+}
+
+\newenvironment{gamegrid}{%
+  \par\vspace{0.15em}%
+  \begingroup
+  \setlength{\parindent}{0pt}%
+}{%
+  \endgroup
+  \par\vspace{0.55em}%
+}
+
+\newcommand{\gamegridrow}[2]{%
+  \noindent
+  \begin{minipage}[t]{0.485\textwidth}#1\end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.485\textwidth}#2\end{minipage}%
+  \par\vspace{0.5em}%
+}
+
+% Canais de comunicação (cards com badge de frequência)
+\newenvironment{qacanal}{%
+  \par\vspace{0.35em}%
+  \begingroup
+  \setlength{\parindent}{0pt}%
+}{%
+  \endgroup
+  \par\vspace{0.5em}%
+}
+
+\newcommand{\qacanalitem}[3]{%
+  \par\vspace{0.55em}%
+  \noindent
+  \begingroup
+  \setlength{\fboxrule}{0.4pt}%
+  \setlength{\fboxsep}{9pt}%
+  \fcolorbox{black!14}{black!3.5}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+      \vspace{0.15em}%
+      \noindent
+      \begin{minipage}[t]{0.62\textwidth}%
+        \raggedright
+        \sffamily\bfseries\fontsize{10}{13}\selectfont\color{linkblue}%
+        #1%
+      \end{minipage}%
+      \hfill
+      \raisebox{0.15ex}{%
+        \begingroup
+        \setlength{\fboxsep}{4pt}%
+        \colorbox{linkblue!10}{%
+          \sffamily\bfseries\fontsize{8.5}{11}\selectfont\color{linkblue!90}%
+          \ #2\ %
+        }%
+        \endgroup
+      }%
+      \par\vspace{0.4em}%
+      \noindent
+      {\fontsize{10.25}{14.5}\selectfont\color{black!78}#3\par}%
+      \vspace{0.15em}%
+    }%
+  }%
+  \endgroup
+  \par
+}
+
+% Status semanal — card formatado
+\newcommand{\qastatusicdone}{\textcolor{green!55!black}{\sffamily\bfseries\fontsize{9.25}{12}\selectfont\checkmark}}
+\newcommand{\qastatusicfind}{\textcolor{orange!75!black}{\sffamily\bfseries\fontsize{9.25}{12}\selectfont !}}
+\newcommand{\qastatusicnext}{\textcolor{linkblue}{\sffamily\bfseries\fontsize{9.25}{12}\selectfont$\rightarrow$}}
+\newcommand{\qastatusicrel}{\textcolor{linkblue}{\sffamily\bfseries\fontsize{9.25}{12}\selectfont R}}
+\newcommand{\qastatusicdot}{\textcolor{black!45}{\sffamily\bfseries\fontsize{9.25}{12}\selectfont\textbullet}}
+
+\newcommand{\qastatusvarianttok}[1]{%
+  \edef\qastatuscheck{#1}%
+}
+
+\newcommand{\qastatussetcolors}[1]{%
+  \def\qastatusfractok{fraco}%
+  \qastatusvarianttok{#1}%
+  \ifx\qastatuscheck\qastatusfractok
+    \def\qastatusframe{orange!55}%
+    \def\qastatusfill{orange!4}%
+    \def\qastatusheadfill{orange!78}%
+    \def\qastatuslabelfill{orange!70!black}%
+  \else
+    \def\qastatusframe{linkblue!35}%
+    \def\qastatusfill{black!2.5}%
+    \def\qastatusheadfill{linkblue}%
+    \def\qastatuslabelfill{linkblue}%
+  \fi
+}
+
+\newcommand{\qastatusbodytext}[2]{%
+  \def\qastatusmodelotok{modelo}%
+  \def\qastatusfractok{fraco}%
+  \qastatusvarianttok{#1}%
+  \ifx\qastatuscheck\qastatusmodelotok
+    {\itshape\fontsize{9.75}{14}\selectfont\color{black!58}#2\par}%
+  \else
+    \ifx\qastatuscheck\qastatusfractok
+      {\fontsize{9.75}{14}\selectfont\color{black!62}#2\par}%
+    \else
+      {\fontsize{9.75}{14}\selectfont\color{black!82}#2\par}%
+    \fi
+  \fi
+}
+
+\newcommand{\qastatuscard}[3]{%
+  \par\vspace{0.05em}%
+  \noindent
+  \begingroup
+  \setlength{\fboxrule}{0.4pt}%
+  \setlength{\fboxsep}{0pt}%
+  \qastatussetcolors{#1}%
+  \fcolorbox{\qastatusframe}{\qastatusfill}{%
+    \parbox[t]{\dimexpr\textwidth-2\fboxrule\relax}{%
+      \vspace{0pt}%
+      \noindent
+      \begingroup
+      \setlength{\fboxsep}{0pt}%
+      \colorbox{\qastatusheadfill}{%
+        \parbox[t]{\linewidth}{%
+          \vspace{0.55em}%
+          \noindent\hspace{0.85em}%
+          {\sffamily\bfseries\fontsize{10.25}{13}\selectfont\color{white}#2\strut}%
+          \hspace{0.85em}\par
+          \vspace{0.4em}%
+        }%
+      }%
+      \endgroup
+      \par\vspace{0.7em}%
+      \noindent\hspace{0.85em}%
+      \begin{minipage}[t]{\dimexpr\linewidth-1.7em\relax}%
+      #3%
+      \end{minipage}%
+      \hspace{0.85em}%
+      \par\vspace{0.35em}%
+    }%
+  }%
+  \endgroup
+  \par\vspace{0.45em}%
+}
+
+\newcommand{\qastatusrow}[4]{%
+  \noindent
+  \begingroup
+  \setlength{\parindent}{0pt}%
+  \qastatussetcolors{#1}%
+  \vspace{0.35em}%
+  \noindent
+  \begin{minipage}[t]{1.35em}%
+    \strut #2%
+  \end{minipage}%
+  \hspace{0.45em}%
+  \begin{minipage}[t]{0.15\linewidth}%
+    \strut\sffamily\bfseries\fontsize{9.25}{12}\selectfont\color{\qastatuslabelfill}#3%
+  \end{minipage}%
+  \hspace{0.4em}%
+  \begin{minipage}[t]{0.72\linewidth}%
+    \strut\qastatusbodytext{#1}{#4}%
+  \end{minipage}%
+  \par
+  \vspace{0.3em}%
+  \noindent{\color{black!12}\rule{\linewidth}{0.4pt}}\par
+  \endgroup
+}
+
+\newcommand{\qastatusrowlast}[4]{%
+  \noindent
+  \begingroup
+  \setlength{\parindent}{0pt}%
+  \qastatussetcolors{#1}%
+  \vspace{0.35em}%
+  \noindent
+  \begin{minipage}[t]{1.35em}%
+    \strut #2%
+  \end{minipage}%
+  \hspace{0.45em}%
+  \begin{minipage}[t]{0.15\linewidth}%
+    \strut\sffamily\bfseries\fontsize{9.25}{12}\selectfont\color{\qastatuslabelfill}#3%
+  \end{minipage}%
+  \hspace{0.4em}%
+  \begin{minipage}[t]{0.72\linewidth}%
+    \strut\qastatusbodytext{#1}{#4}%
+  \end{minipage}%
+  \par
+  \vspace{0.15em}%
+  \endgroup
+}
+
+\newcommand{\capituloficha}[2]{%
+  \par\vspace{0.35em}%
+  \noindent
+  \begingroup
+  \sffamily
+  \fontsize{9}{12}\selectfont
+  \color{black!55}%
+  \begin{minipage}{\textwidth}%
+  \begin{minipage}[t]{0.48\textwidth}%
+  \raggedright
+  \textbf{Tema:}~#1%
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}%
+  \raggedleft
+  \textbf{Origem:}~#2%
+  \end{minipage}%
+  \end{minipage}%
+  \endgroup
+  \par\vspace{0.85em}%
+}
+
+% Capas de seção (partes temáticas)
+\newcommand{\partecabecalho}[2]{%
+  \if\relax\detokenize{#1}\relax\else
+    \begingroup
+    {\fontsize{14}{18}\selectfont\bfseries\color{black!55} #1\par\vspace{0.75em}}%
+    \endgroup
+  \fi
+  \if\relax\detokenize{#2}\relax\else
+    \begingroup
+    {\fontsize{26}{32}\selectfont\bfseries\color{black} #2\par\vspace{1.25em}}%
+    \endgroup
+  \fi
+}
+\newcommand{\partetoctitle}[1]{%
+  \texorpdfstring{%
+    {\sffamily\bfseries #1}%
+  }{#1}%
+}
+\newcommand{\partetitulo}[1]{%
+  \begingroup
+  {\fontsize{26}{32}\selectfont\bfseries\color{black} #1}%
+  \endgroup
+}
+\newenvironment{parte-prefacio-titulo}{%
+  \begingroup
+  \sffamily
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \vspace*{0pt}%
+  \noindent
+  \begin{minipage}[c][0.333\textheight][c]{\textwidth}
+  \begin{center}
+}{%
+  \end{center}
+  \end{minipage}
+  \par\vspace{1.25em}%
+  \endgroup
+}
+\newcommand{\partehead}[2]{%
+  \begin{center}%
+  \sffamily
+  \partecabecalho{#1}{#2}%
+  \end{center}%
+  \vspace{0.65em}%
+}
+
+\newenvironment{partebody}{%
+  \begingroup
+  \centering
+  \sffamily
+  \color{black!75}%
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0.75em}%
+}{%
+  \endgroup
+}
+
+\newcommand{\parteepigrafe}[1]{%
+  \begin{center}%
+  {\large\itshape\color{black!55}#1\par}%
+  \end{center}%
+  \vspace{0.85em}%
+}
+
+\newenvironment{parte}{%
+  \null\vspace*{\fill}%
+  \noindent\begin{minipage}{\textwidth}%
+}{%
+  \end{minipage}%
+  \vspace*{\fill}%
+}
+
+% Paginação: capítulo sem cabeçalho; demais páginas com título + número no topo
+\makeatletter
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\chaptername~\thechapter.\ #1}{\chaptername~\thechapter.\ #1}%
+}
+% Subseções não alteram cabeçalho — só capítulo/seção .parte
+\renewcommand{\sectionmark}[1]{}%
+\renewcommand{\subsectionmark}[1]{}%
+\makeatother
+
+\newcommand{\runningtitle}[1]{%
+  {\small\sffamily\color{black!55}#1}%
+}
+
+\newcommand{\runningpage}{%
+  {\small\sffamily\bfseries\color{black!75}\thepage}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Página da direita (ímpar): título · número — canto superior externo
+\fancyhead[RO]{\runningtitle{\rightmark}\hspace{0.75em}\textbar\hspace{0.75em}\runningpage}
+% Página da esquerda (par): número · título — canto superior externo
+\fancyhead[LE]{\runningpage\hspace{0.75em}\textbar\hspace{0.75em}\runningtitle{\leftmark}}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+}
+\fancypagestyle{empty}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% Páginas totalmente em branco: sem cabeçalho nem paginação
+\makeatletter
+\AtBeginDocument{%
+  \@ifpackageloaded{atbegshi}{%
+    \AtBeginShipout{%
+      \ifdim\pagetotal=0pt\relax
+        \thispagestyle{empty}%
+      \fi
+    }%
+  }{}%
+}
+\makeatother
 
 % Seções: título limpo, sem numeração visual pesada
 \titleformat{\section}
@@ -51,6 +618,16 @@
   {}
   {0em}
   {}
+
+% Subtítulos do front matter (Prefácio, Introdução, Abertura) — sem sumário
+\newcommand{\frontsubhead}[1]{%
+  \par\vspace{1.25em}%
+  \noindent
+  {\sffamily\Large\bfseries #1\par}%
+  \vspace{0.4em}%
+}
+
+\titlespacing*{\section}{0pt}{1.25em}{0.4em}
 
 \titleformat{\subsection}
   {\normalfont\sffamily\large\bfseries}
@@ -66,14 +643,45 @@
 \setlist[itemize]{topsep=0.4em, itemsep=0.15em, parsep=0pt}
 \setlist[enumerate]{topsep=0.4em, itemsep=0.15em, parsep=0pt}
 
-% Sumário: texto e links pretos (links do corpo continuam azuis)
-\renewcommand{\cftchapfont}{\normalfont\bfseries\color{black}}
-\renewcommand{\cftsecfont}{\normalfont\color{black}}
+% Sumário: partes com pontilhado e paginação alinhada aos capítulos
+\makeatletter
+\renewcommand{\l@part}[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \addpenalty{-\@highpenalty}%
+    \addvspace{1.25em \@plus\p@}%
+    \begingroup
+      \parindent \z@
+      \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode
+      {\sffamily\bfseries #1}\nobreak
+      \leaders\hbox{$\m@th\mkern\@dotsep mu\hbox{.}\mkern\@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi
+}
+\makeatother
+
+\renewcommand{\cftpartfont}{\sffamily\bfseries\color{black}}
+\renewcommand{\cftpartpagefont}{\normalfont\color{black}}
+\setlength{\cftpartindent}{0em}
+\setlength{\cftbeforepartskip}{0pt}
+
+\renewcommand{\cftchapfont}{\normalfont\color{black}}
 \renewcommand{\cftchappagefont}{\normalfont\color{black}}
+\setlength{\cftchapindent}{1.75em}
+
+\renewcommand{\cftsecfont}{\normalfont\color{black}}
 \renewcommand{\cftsecpagefont}{\normalfont\color{black}}
+\setlength{\cftsecindent}{1.75em}
 
 \AtBeginDocument{%
   \pretocmd{\tableofcontents}{%
+    \clearpage
+    \thispagestyle{empty}%
+    \input{ficha-catalografica.tex}%
+    \clearpage
+    \thispagestyle{empty}%
     \hypersetup{linkcolor=black,urlcolor=black}%
   }{}{}%
   \apptocmd{\tableofcontents}{%
